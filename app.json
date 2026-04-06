@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Expo-Intro",
-    "slug": "Expo-Intro",
+    "slug": "expo-intro",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -19,7 +19,8 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.carloscanetgaladrim.expointro"
     },
     "web": {
       "output": "static",
@@ -43,6 +44,13 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "ee9480a7-b3ed-4553-969e-274ec60eba6a"
+      }
+    },
+    "owner": "carloscanet-galadrim"
   }
 }
