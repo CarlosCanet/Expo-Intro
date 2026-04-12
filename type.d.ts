@@ -1,4 +1,3 @@
-/// <reference types="uniwind/types" />
 import type { ImageSourcePropType } from "react-native"
 
 declare global {

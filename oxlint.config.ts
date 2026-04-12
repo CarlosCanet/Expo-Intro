@@ -5,6 +5,7 @@ import remix from "ultracite/oxlint/remix"
 
 export default defineConfig({
   extends: [core, react, remix],
+  ignorePatterns: ["uniwind-types.d.ts"],
   rules: {
     "eslint/func-style": "off",
     "eslint/no-use-before-define": ["error", { functions: false }],
