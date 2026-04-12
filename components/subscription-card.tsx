@@ -25,6 +25,13 @@ export default function SubscriptionCard({
   expanded,
   onPress,
 }: SubscriptionCardProps) {
+  const fallback = "Not provided"
+  const summary =
+    category?.trim() ||
+    plan?.trim() ||
+    (renewalDate ? formatSubscriptionDateTime(renewalDate) : fallback)
+  const detailsCategory = category?.trimEnd() || plan?.trim() || fallback
+
   return (
     <Pressable
       onPress={onPress}
@@ -39,9 +46,7 @@ export default function SubscriptionCard({
               {name}
             </Text>
             <Text numberOfLines={1} ellipsizeMode="tail" className="sub-meta">
-              {category?.trim() ||
-                plan?.trim() ||
-                (renewalDate ? formatSubscriptionDateTime(renewalDate) : "")}
+              {summary}
             </Text>
           </View>
         </View>
@@ -58,7 +63,7 @@ export default function SubscriptionCard({
               <View className="sub-row-copy">
                 <Text className="sub-label">Payment:</Text>
                 <Text className="sub-value" numberOfLines={1} ellipsizeMode="tail">
-                  {paymentMethod?.trimEnd()}
+                  {paymentMethod?.trimEnd() ?? fallback}
                 </Text>
               </View>
             </View>
@@ -67,7 +72,7 @@ export default function SubscriptionCard({
               <View className="sub-row-copy">
                 <Text className="sub-label">Category:</Text>
                 <Text className="sub-value" numberOfLines={1} ellipsizeMode="tail">
-                  {category?.trimEnd() || plan?.trim()}
+                  {detailsCategory}
                 </Text>
               </View>
             </View>
@@ -75,7 +80,7 @@ export default function SubscriptionCard({
               <View className="sub-row-copy">
                 <Text className="sub-label">Started:</Text>
                 <Text className="sub-value" numberOfLines={1} ellipsizeMode="tail">
-                  {startDate ? formatSubscriptionDateTime(startDate) : ""}
+                  {startDate ? formatSubscriptionDateTime(startDate) : fallback}
                 </Text>
               </View>
             </View>
@@ -83,7 +88,7 @@ export default function SubscriptionCard({
               <View className="sub-row-copy">
                 <Text className="sub-label">Renewal Date:</Text>
                 <Text className="sub-value" numberOfLines={1} ellipsizeMode="tail">
-                  {renewalDate ? formatSubscriptionDateTime(renewalDate) : ""}
+                  {renewalDate ? formatSubscriptionDateTime(renewalDate) : fallback}
                 </Text>
               </View>
             </View>
@@ -91,7 +96,7 @@ export default function SubscriptionCard({
               <View className="sub-row-copy">
                 <Text className="sub-label">Status:</Text>
                 <Text className="sub-value" numberOfLines={1} ellipsizeMode="tail">
-                  {status ? formatStatusLabel(status) : ""}
+                  {status ? formatStatusLabel(status) : fallback}
                 </Text>
               </View>
             </View>

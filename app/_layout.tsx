@@ -10,6 +10,8 @@ import sansMedium from "@/assets/fonts/PlusJakartaSans-Medium.ttf"
 import sansRegular from "@/assets/fonts/PlusJakartaSans-Regular.ttf"
 import sansSemiBold from "@/assets/fonts/PlusJakartaSans-SemiBold.ttf"
 
+SplashScreen.preventAutoHideAsync()
+
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({
     "sans-bold": sansBold,
