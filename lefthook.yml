@@ -1,0 +1,14 @@
+pre-commit:
+  parallel: true
+  jobs:
+    - name: Check lockfile
+      run: bun install --frozen-lockfile --silent
+
+    - name: Lint
+      run: bun lint
+
+    - name: Format
+      run: bun format
+
+    - name: Typecheck
+      run: bun typecheck
