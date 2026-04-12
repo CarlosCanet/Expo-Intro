@@ -1,5 +1,5 @@
-import { Link } from "expo-router";
-import { View, Text } from "react-native";
+import { Link } from "expo-router"
+import { View, Text } from "react-native"
 
 export default function SignIn() {
   return (
@@ -9,5 +9,5 @@ export default function SignIn() {
         Create account
       </Link>
     </View>
-  );
+  )
 }

@@ -1,12 +1,14 @@
-import { Link } from "expo-router";
-import { Text, View } from "react-native";
+import { Link } from "expo-router"
+import { Text } from "react-native"
+import { SafeAreaView as RNSafeAreaView } from "react-native-safe-area-context"
+import { withUniwind } from "uniwind"
+
+const SafeAreaView = withUniwind(RNSafeAreaView)
 
 export default function Index() {
   return (
-    <View className="flex-1 justify-center items-center bg-background">
-      <Text className="text-success text-4xl font-bold text-center">
-        Edit app/index.tsx to edit this screen.
-      </Text>
+    <SafeAreaView className="flex-1 bg-background p-5">
+      <Text className="text-success text-xl font-bold text-center">Welcome to Uniwind!</Text>
       <Link href="/onboarding" className="mt-4 rounded-2xl bg-primary p-6 text-white text-lg">
         Go to onboarding
       </Link>
@@ -20,11 +22,11 @@ export default function Index() {
         Spotify Subscription
       </Link>
       <Link
-        href={{ pathname: "/subscriptions/[id]", params: { id: "claude" } }}
+        href={{ params: { id: "claude" }, pathname: "/subscriptions/[id]" }}
         className="mt-4 rounded-2xl bg-primary p-6 text-white text-lg"
       >
         Claude Max Subscription
       </Link>
-    </View>
-  );
+    </SafeAreaView>
+  )
 }
