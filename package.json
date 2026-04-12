@@ -2,6 +2,7 @@
   "name": "expo-intro",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "main": "expo-router/entry",
   "scripts": {
     "start": "expo start",
@@ -12,8 +13,12 @@
     "web": "expo start --web",
     "lint:expo": "expo lint",
     "lint": "oxlint .",
+    "lint:fix": "oxlint --fix .",
     "format": "oxfmt .",
-    "typecheck": "tsgo --noEmit"
+    "typecheck": "tsgo --noEmit",
+    "check": "ultracite check",
+    "fix": "ultracite fix",
+    "prepare": "lefthook install"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",
@@ -49,12 +54,11 @@
   "devDependencies": {
     "@types/react": "~19.1.0",
     "@typescript/native-preview": "^7.0.0-dev.20260412.1",
-    "eslint": "^9.25.0",
-    "eslint-config-expo": "~10.0.0",
     "lefthook": "^2.1.5",
-    "oxfmt": "^0.43.0",
-    "oxlint": "^1.58.0",
+    "oxfmt": "^0.44.0",
+    "oxlint": "^1.59.0",
     "tsx": "^4.21.0",
-    "typescript": "~5.9.2"
+    "typescript": "~5.9.2",
+    "ultracite": "^7.5.6"
   }
 }

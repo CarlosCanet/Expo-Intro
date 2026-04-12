@@ -1,9 +1,11 @@
-// @ts-nocheck
-import { getDefaultConfig } from "expo/metro-config";
-import { withUniwindConfig } from "uniwind/metro";
-const config = getDefaultConfig(__dirname);
+/// <reference types="node" />
+import { getDefaultConfig } from "expo/metro-config.js"
+import { withUniwindConfig } from "uniwind/metro"
 
-module.exports = withUniwindConfig(config, {
+const config = getDefaultConfig(process.cwd())
+
+// @ts-expect-error -- type mismatch between @expo/metro and metro-file-map internal types
+export default withUniwindConfig(config, {
   cssEntryFile: "./global.css",
   dtsFile: "./uniwind-types.d.ts",
-});
+})
