@@ -7,5 +7,5 @@
     }
   },
   "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"],
-  "exclude": ["metro.config.ts", "uniwind-types.d.ts", "src/app-example/**"]
+  "exclude": ["metro.config.ts", "src/app-example/**"]
 }
