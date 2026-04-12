@@ -51,6 +51,17 @@
             "./assets/fonts/PlusJakartaSans-SemiBold.ttf"
           ]
         }
+      ],
+      "expo-secure-store",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "packagingOptions": {
+              "excludes": ["META-INF/versions/9/OSGI-INF/MANIFEST.MF"]
+            }
+          }
+        }
       ]
     ],
     "experiments": {
